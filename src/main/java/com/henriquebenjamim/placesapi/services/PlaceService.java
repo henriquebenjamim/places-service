@@ -6,6 +6,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
+import java.util.Optional;
 
 @Service
 public class PlaceService {
@@ -23,6 +24,10 @@ public class PlaceService {
 
     public List<Place> list() {
         return placeRepository.findAll();
+    }
+
+    public Optional<Place> getById(Long id){
+        return placeRepository.findById(id);
     }
 
     public Place update(Place place) {
